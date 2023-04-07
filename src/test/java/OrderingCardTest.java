@@ -19,7 +19,7 @@ class OrderingCardTest {
     static void setUpAll() {
 
         //WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "driver/linux/chromedriver");
     }
 
     @BeforeEach
