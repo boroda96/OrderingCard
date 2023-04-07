@@ -14,17 +14,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class OrderingCardTest {
     private WebDriver driver;
+    private static ChromeOptions options;
     @BeforeAll
     static void setUpAll() {
-        ChromeOptions options = new ChromeOptions();
+        options = new ChromeOptions();
         options.addArguments("--headless");
-        WebDriverManager.chromedriver().setup();
-        //System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver.exe");
+        //WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver.exe");
     }
 
     @BeforeEach
     void setUp() {
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
     }
 
     @AfterEach
