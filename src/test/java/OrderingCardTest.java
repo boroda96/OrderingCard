@@ -20,7 +20,7 @@ class OrderingCardTest {
         options = new ChromeOptions();
         options.addArguments("--headless");
         //WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
     }
 
     @BeforeEach
