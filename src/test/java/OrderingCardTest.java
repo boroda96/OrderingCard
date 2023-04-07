@@ -14,10 +14,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class OrderingCardTest {
     private WebDriver driver;
+
     //private static ChromeOptions options;
     @BeforeAll
     static void setUpAll() {
-
         //WebDriverManager.chromedriver().setup();
         System.setProperty("webdriver.chrome.driver", "driver/linux/chromedriver");
     }
@@ -36,9 +36,9 @@ class OrderingCardTest {
     }
 
     @Test
-    void shouldTestSomething(){
+    void shouldTestSomething() {
         driver.get("http://localhost:9999");
-       driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Васильев Василий");
+        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Васильев Василий");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79990000000");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.className("button")).click();
@@ -46,8 +46,6 @@ class OrderingCardTest {
         String actual = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
         assertEquals(expected, actual);
 
-
     }
-
 
 }
