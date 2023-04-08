@@ -4,7 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,9 +17,7 @@ class OrderingCardTest {
 
     @BeforeAll
     static void setUpAll() {
-
         WebDriverManager.chromedriver().setup();
-        //System.setProperty("webdriver.chrome.driver", "driver/linux/chromedriver");
     }
 
     @BeforeEach
@@ -48,6 +45,7 @@ class OrderingCardTest {
         assertEquals(expected, actual);
 
     }
+
     @Test
     void shouldTestNegativeName() {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Vasya");
@@ -58,6 +56,7 @@ class OrderingCardTest {
         String actual = driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub")).getText().trim();
         assertEquals(expected, actual);
     }
+
     @Test
     void shouldTestNegativeNoName() {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("");
@@ -68,6 +67,7 @@ class OrderingCardTest {
         String actual = driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub")).getText().trim();
         assertEquals(expected, actual);
     }
+
     @Test
     void shouldTestNegativePhone() {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Васильев Василий");
@@ -78,6 +78,7 @@ class OrderingCardTest {
         String actual = driver.findElement(By.cssSelector("[data-test-id=phone].input_invalid .input__sub")).getText().trim();
         assertEquals(expected, actual);
     }
+
     @Test
     void shouldTestNegativeNoPhone() {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Васильев Василий");
@@ -88,6 +89,7 @@ class OrderingCardTest {
         String actual = driver.findElement(By.cssSelector("[data-test-id=phone].input_invalid .input__sub")).getText().trim();
         assertEquals(expected, actual);
     }
+
     @Test
     void shouldTestNegativeCheckBox() {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Васильев Василий");
